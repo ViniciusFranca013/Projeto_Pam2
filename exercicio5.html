@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Vinicius França 3°DS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Tipos de Funções</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+    
+    <script>
+        function mostraNaPagina(texto) {
+            var divOutput = document.getElementById("output");
+            divOutput.innerHTML += "<p>" + texto + "</p>";
+        }
+
+        // Função Nomeada
+        function funcaoNomeada() {
+            mostraNaPagina("Esta é uma função nomeada.");
+        }
+
+        // Função Nomeada com argumento e retorno
+        function soma(a, b) {
+            return a + b;
+        }
+
+        // Função com Construtor
+        function FuncaoComConstrutor(nome) {
+            this.nome = nome;
+            this.digaOla = function() {
+                mostraNaPagina("Olá, " + this.nome + "!");
+            };
+        }
+
+        // Função Literal (variável)
+        var funcaoLiteral = function() {
+            mostraNaPagina("Esta é uma função literal.");
+        };
+
+        // Função de Flecha (Arrow functions)
+        const funcaoFlecha = () => {
+            mostraNaPagina("Esta é uma função de flecha (Arrow function).");
+        };
+
+        // Chamadas de exemplo
+        funcaoNomeada();
+        mostraNaPagina("A soma de 2 e 3 é: " + soma(2, 3));
+        var obj = new FuncaoComConstrutor("Mundo");
+        obj.digaOla();
+        funcaoLiteral();
+        funcaoFlecha();
+    </script>
+</body>
+</html>
